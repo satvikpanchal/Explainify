@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELI5 Explainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+    
+    <main class="container">
+        <div class="glass-card" id="mainCard">
+            <header class="card-header">
+                <h1 class="title">ELI5 Explainer</h1>
+                <p class="subtitle">Explain anything in 2–3 simple sentences.</p>
+            </header>
+
+            <div class="card-content">
+                <textarea 
+                    id="inputText" 
+                    class="glass-textarea" 
+                    placeholder="Paste any complex text here... (Wikipedia, research, code comments, etc.)"
+                ></textarea>
+
+                <div class="controls-section">
+                    <div class="control-group">
+                        <div class="control-label-row">
+                            <label for="simplicity">Simplicity</label>
+                            <span class="slider-value" id="simplicityValue">🧒 Like I'm 5</span>
+                        </div>
+                        <div class="slider-container">
+                            <input 
+                                type="range" 
+                                id="simplicity" 
+                                class="slider" 
+                                min="0" 
+                                max="2" 
+                                step="1" 
+                                value="0"
+                                aria-label="Simplicity level"
+                            />
+                            <div class="slider-ticks">
+                                <span class="tick">0</span>
+                                <span class="tick">1</span>
+                                <span class="tick">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label-row">
+                            <label for="tone">Tone</label>
+                            <span class="slider-value" id="toneValue">🌈 Friendly</span>
+                        </div>
+                        <div class="slider-container">
+                            <input 
+                                type="range" 
+                                id="tone" 
+                                class="slider" 
+                                min="0" 
+                                max="3" 
+                                step="1" 
+                                value="0"
+                                aria-label="Tone style"
+                            />
+                            <div class="slider-ticks">
+                                <span class="tick">0</span>
+                                <span class="tick">1</span>
+                                <span class="tick">2</span>
+                                <span class="tick">3</span>
+                            </div>
+                        </div>
+                        <div class="tone-chips">
+                            <button class="tone-chip" data-value="0" aria-label="Friendly tone">🌈 Friendly</button>
+                            <button class="tone-chip" data-value="1" aria-label="Teacher tone">🤓 Teacher</button>
+                            <button class="tone-chip" data-value="2" aria-label="Funny tone">😂 Funny</button>
+                            <button class="tone-chip" data-value="3" aria-label="Calm tone">🧘 Calm</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="language">Language</label>
+                        <div class="segmented-control" role="group" aria-label="Language selection">
+                            <button class="segment-button active" data-value="en" aria-pressed="true">EN</button>
+                            <button class="segment-button" data-value="es" aria-pressed="false">ES</button>
+                            <button class="segment-button" data-value="hi" aria-pressed="false">HI</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="explainBtn" class="primary-button">
+                    <span>Explain It</span>
+                </button>
+
+                <div id="outputArea" class="output-area hidden">
+                    <div class="glass-card output-card">
+                        <div class="output-header">
+                            <h2 class="output-title">Result</h2>
+                            <button id="copyBtn" class="copy-button" aria-label="Copy result">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="outputText" class="output-text"></div>
+                    </div>
+                </div>
+
+                <div id="loadingArea" class="loading-area hidden">
+                    <div class="shimmer-container">
+                        <div class="shimmer-placeholder"></div>
+                    </div>
+                    <p class="loading-text">🧒 Thinking like a 5-year-old…</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast hidden">
+        <span>Copied!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
