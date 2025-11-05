@@ -31,13 +31,6 @@ A beautiful, minimal web application that simplifies complex text into easy-to-u
   - 🎉 Enthusiastic – Energetic and positive
   - ✨ Custom – Define your own tone
 
-### Design Features
-- **OpenAI-Style Gradient Background**: Static radial gradients with subtle hue shifts
-- **Liquid Glass Effect**: Frosted glass cards with backdrop blur and translucent overlays
-- **Premium Aesthetics**: Dark theme with generous whitespace and modern typography
-- **Smooth Animations**: Card fade-in, shimmer loading states, and micro-interactions
-- **Fully Responsive**: Mobile-first design that works beautifully on all devices
-
 ## Tech Stack
 
 - **Frontend**: Pure HTML, CSS, and JavaScript (vanilla JS)
